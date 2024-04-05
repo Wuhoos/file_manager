@@ -19,12 +19,12 @@ image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi",
                     ".raw", ".arw", ".cr2", ".nrw", ".k25", ".bmp", 
                     ".dib", ".heif", ".heic", ".ind", ".indd", ".indt", 
                     ".jp2", ".j2k", ".jpf", ".jpf", ".jpx", ".jpm", ".mj2", 
-                    ".svg", ".svgz", ".ai", ".eps", ".ico", '.mov']
+                    ".svg", ".svgz", ".ai", ".eps", ".ico", '.mov', '.m4a', '.mp4']
 
 document_extensions = [".doc", ".docx", ".odt",
                        ".pdf", ".xls", ".xlsx", ".ppt", ".pptx"]
 
-other_extensions = ['.dmg', '.ttf', '.db', '.iso', '.exe']
+other_extensions = ['.dmg', '.ttf', '.db', '.iso', '.exe', '.ics']
 
 
 def newName(dest, name):
