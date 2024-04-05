@@ -11,6 +11,7 @@ from watchdog.events import FileSystemEventHandler
 sourceDir = '/Users/david/Downloads'
 docDir = '/Users/david/Downloads/docs'
 imgDir = '/Users/david/Downloads/img'
+zipDir = '/Users/david/Downloads/zipFile'
 
 image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi",
                     ".png", ".gif", ".webp", ".tiff", ".tif", ".psd", 
@@ -28,6 +29,7 @@ def newName(dest, name):
     counter = 1
     while exists(f"{dest}/{name}"):
         name = f"{filename}({str(counter)}){extension}"
+        print(f'this is the {name}')
         counter += 1
     return name
 
@@ -47,6 +49,7 @@ class MoveHandler(FileSystemEventHandler):
                 name = download.name
                 self.checkDocFile(download, name)
                 self.checkImgFile(download, name)
+                self.checkZipFile(download, name)
 
     def checkDocFile(self, entry, name):
         for document_extension in document_extensions:
@@ -60,7 +63,10 @@ class MoveHandler(FileSystemEventHandler):
                 moveFile(imgDir, entry.path, name)
                 logging.info(f"Moved img File: {name}")
 
-
+    def checkZipFile(self, entry, name):
+        if name.endswith('.zip'):
+            moveFile(zipDir, entry.path, name)
+            logging.info(f'Moved zip file: {name}')
 
 
 if __name__ == "__main__":
