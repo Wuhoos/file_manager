@@ -11,9 +11,11 @@ Moves files into their respective subdirectories based on their extensions.
 
 2. Modify the script file to specify the directories you want to organize:
 
-imgDir = 'path/to/img/dir'
-docDir = 'path/to/doc/dir'
-otherDir = 'path/to/other/dir'
+-imgDir = 'path/to/img/dir'
+
+-docDir = 'path/to/doc/dir'
+
+-otherDir = 'path/to/other/dir'
 
 3. Run the script by executing python organize_directories.py in your terminal.
 
